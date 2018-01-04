@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style{{#sass}} lang="scss"{{/sass}}>
+@import "assets/css/base.css";
+@import "assets/css/mobile_h5.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
