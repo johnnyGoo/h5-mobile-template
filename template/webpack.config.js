@@ -54,7 +54,13 @@ module.exports = {
               'sass-loader?indentedSyntax'
             ]
             {{/sass}}
-          }
+          },
+              transformToRequire: {
+                img: 'src', image: 'xlink:href', // defaults
+                  video: 'src',
+                  source: 'src',
+                  audio: 'src'
+              }
           // other vue-loader options go here
         }
       },
@@ -63,13 +69,30 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
+        {
+          test: /\.(png|jpg|jpeg|gif|svg)$/,
+            loader: 'file-loader',
+          options: {
+          name: '[name].[ext]?[hash]',
+            outputPath: 'img/'
         }
-      }
+        },
+        {
+          test: /\.(woff|eot|ttf)$/,
+            loader: 'file-loader',
+          options: {
+          name: '[name].[ext]?[hash]',
+            outputPath: 'fonts/'
+        }
+        },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            loader: 'file-loader',
+          options: {
+          name: '[name].[ext]?[hash]',
+            outputPath: 'media/'
+        }
+        }
     ]
   },
   resolve: {
