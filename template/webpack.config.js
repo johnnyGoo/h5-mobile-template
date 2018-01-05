@@ -20,7 +20,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    publicPath: '',
     filename: 'app_[hash].js'
   },
   module: {
