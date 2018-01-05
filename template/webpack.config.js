@@ -1,6 +1,21 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var fs = require('fs');
+var deleteFolderRecursive = function(path) {
+  if( fs.existsSync(path) ) {
+    fs.readdirSync(path).forEach(function(file,index){
+      var curPath = path + "/" + file;
+      if(fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFolderRecursive(curPath);
+      } else { // delete file
+        fs.unlinkSync(curPath);
+      }
+    });
+    fs.rmdirSync(path);
+  }
+};
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -113,6 +128,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  deleteFolderRecursive('dist')
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
@@ -145,6 +161,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
   ])
 } else {
+  module.exports.devtool = '#source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new HtmlWebpackPlugin({
       template: 'index.html',
