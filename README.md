@@ -11,8 +11,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 ``` bash
 $ npm install -g vue-cli
 $ vue init johnnyGoo/h5-mobile-template my-project
-$ cd my-project
-$ npm install
+$ cd my-project && npm install
 $ npm run dev
 ```
 
