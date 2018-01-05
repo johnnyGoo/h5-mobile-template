@@ -21,7 +21,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '',
-    filename: 'app_[hash].js'
+    filename: 'js/app_[hash].js'
   },
   module: {
     rules: [
@@ -129,7 +129,7 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   deleteFolderRecursive('dist')
-  module.exports.devtool = '#source-map'
+ 
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
