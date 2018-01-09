@@ -6,12 +6,15 @@
 </template>
 
 <script>
+  import fastclick from 'fastclick'
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
+  },mounted: function () {
+    fastclick.attach(this.$el)
   }
 }
 </script>
