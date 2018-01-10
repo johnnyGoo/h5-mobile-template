@@ -107,6 +107,14 @@ module.exports = {
           name: '[name].[ext]?[hash]',
             outputPath: 'media/'
         }
+        },
+        {
+          test: /\.(json|babylon|obj|mtl|prwm)(\?.*)?$/,
+            loader: 'file-loader',
+          options: {
+          name: '[name].[ext]?[hash]',
+            outputPath: 'data/'
+        }
         }
     ]
   },
