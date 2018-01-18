@@ -16,7 +16,7 @@ option.shareData={
   }
 }
 
-shareURL = document.location.href;
+let shareURL = document.location.href;
 window.WECHAT_SHARE = new WechatShare(encodeURIComponent(shareURL), option);
 new Vue({
   el: '#app',
