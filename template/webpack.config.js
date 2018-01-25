@@ -168,9 +168,9 @@ if (process.env.NODE_ENV === 'production') {
       chunksSortMode: 'dependency'
     }),
     new CopyWebpackPlugin([{
-      from: __dirname + '/img',to: __dirname + '/dist/img'
+      from: __dirname + '/img',to: __dirname + '/dist/img',ignore:'*.txt'
     },{
-    from: __dirname + '/media',to: __dirname + '/dist/media'
+    from: __dirname + '/media',to: __dirname + '/dist/media',ignore:'*.txt'
   }])
   ])
 } else {

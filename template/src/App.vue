@@ -7,6 +7,8 @@
 
 <script>
   import fastclick from 'fastclick'
+
+
 export default {
   name: 'app',
   data () {
@@ -14,6 +16,7 @@ export default {
 
     }
   },mounted: function () {
+
     fastclick.attach(this.$el)
   }
 }
