@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var CopyWebpackPlugin =require('copy-webpack-plugin')
 var fs = require('fs');
 var deleteFolderRecursive = function(path) {
   if( fs.existsSync(path) ) {
@@ -166,6 +167,11 @@ if (process.env.NODE_ENV === 'production') {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
+    new CopyWebpackPlugin([{
+      from: __dirname + '/img',to: __dirname + '/dist/img'
+    },{
+    from: __dirname + '/media',to: __dirname + '/dist/media'
+  }])
   ])
 } else {
   module.exports.devtool = '#source-map'
