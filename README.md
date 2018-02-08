@@ -14,8 +14,11 @@ $ vue init johnnyGoo/h5-mobile-template my-project
 $ cd my-project && npm install
 $ npm run dev
 
-someone with error webpack-dev-server is not install crrectly so:
-$ npm install webpack-dev-server@2.9.1 --save-dev
+
+you can import more files like this:
+
+  const requireContext = require.context("assets/img", true, /^\.\/.*\.png$/);
+  const images = requireContext.keys().map(requireContext);
 ```
 
 ### What's Included

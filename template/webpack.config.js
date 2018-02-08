@@ -166,12 +166,12 @@ if (process.env.NODE_ENV === 'production') {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
-    }),
-    new CopyWebpackPlugin([{
-      from: __dirname + '/img',to: __dirname + '/dist/img',ignore:'*.txt'
-    },{
-    from: __dirname + '/media',to: __dirname + '/dist/media',ignore:'*.txt'
-  }])
+    })//,
+  //   new CopyWebpackPlugin([{
+  //     from: __dirname + '/img',to: __dirname + '/dist/img',ignore:'*.txt'
+  //   },{
+  //   from: __dirname + '/media',to: __dirname + '/dist/media',ignore:'*.txt'
+  // }])
   ])
 } else {
   module.exports.devtool = '#source-map'
