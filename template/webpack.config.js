@@ -89,7 +89,7 @@ module.exports = {
           test: /\.(png|jpg|jpeg|gif|svg)$/,
             loader: 'file-loader',
           options: {
-          name: '[name].[ext]?[hash]',
+          name: '[hash].[ext]',
             outputPath: 'img/'
         }
         },
@@ -97,7 +97,7 @@ module.exports = {
           test: /\.(woff|eot|ttf)$/,
             loader: 'file-loader',
           options: {
-          name: '[name].[ext]?[hash]',
+          name: '[hash].[ext]',
             outputPath: 'fonts/'
         }
         },
@@ -105,7 +105,7 @@ module.exports = {
           test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
             loader: 'file-loader',
           options: {
-          name: '[name].[ext]?[hash]',
+          name: '[hash].[ext]',
             outputPath: 'media/'
         }
         },
@@ -113,7 +113,7 @@ module.exports = {
           test: /\.(json|babylon|obj|mtl|prwm)(\?.*)?$/,
             loader: 'file-loader',
           options: {
-          name: '[name].[ext]?[hash]',
+          name: '[hash].[ext]',
             outputPath: 'data/'
         }
         }
