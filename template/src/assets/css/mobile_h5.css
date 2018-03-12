@@ -4,3 +4,19 @@ html, body {
   width: 100%;
   height: 100%;
 }
+canvas{
+  display: block;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
