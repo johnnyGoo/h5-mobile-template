@@ -173,7 +173,29 @@ if (process.env.NODE_ENV === 'production') {
   //   from: __dirname + '/media',to: __dirname + '/dist/media',ignore:'*.txt'
   // }])
   ])
-} else {
+} if (process.env.NODE_ENV === 'sprite') {
+
+          module.exports.plugins =([]).concat([new SpritesmithPlugin({
+            // 目标小图标
+            src: {
+              cwd: path.resolve(__dirname, './src/assets/icons'),
+              glob: '*.png'
+            },
+            // 输出雪碧图文件及样式文件
+            target: {
+              image: path.resolve(__dirname, './src/assets/img/__icons.png'),
+              css: path.resolve(__dirname, './src/assets/css/__icons.css')
+            },
+            // 样式文件中调用雪碧图地址写法
+            apiOptions: {
+              cssImageRef: '../img/__icons.png'
+            },
+            spritesmithOptions: {
+              algorithm: 'binary-tree'
+            }
+          })])
+
+        } else {
   module.exports.devtool = '#source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new HtmlWebpackPlugin({

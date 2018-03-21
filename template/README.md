@@ -8,6 +8,9 @@
 # install dependencies
 npm install
 
+# build sprite css and image from icons dir
+npm run sprite
+
 # serve with hot reload at localhost:8080
 npm run dev
 
